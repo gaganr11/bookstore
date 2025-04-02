@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Order Confirmed</title>
+    <link rel="stylesheet" href="success.css">
+</head>
+<body>
+
+    <div class="confirmation">
+        <h1>Thank You for Your Order!</h1>
+        <p>Your books will be delivered soon to:</p>
+        <div id="buyer-info"></div>
+
+        <button onclick="window.location.href='index.html'" class="btn-home">Return to Home</button>
+    </div>
+
+    <script>
+        // Retrieve buyer details from local storage
+        let buyer = JSON.parse(localStorage.getItem("buyerDetails"));
+
+        if (buyer) {
+            document.getElementById("buyer-info").innerHTML = `
+                <p><strong>Name:</strong> ${buyer.name}</p>
+                <p><strong>Address:</strong> ${buyer.address}, ${buyer.city}, ${buyer.postalCode}</p>
+                <p><strong>Phone:</strong> ${buyer.phone}</p>
+            `;
+        }
+
+        // Clear buyer details after displaying them
+        localStorage.removeItem("buyerDetails");
+    </script>
+
+</body>
+</html>

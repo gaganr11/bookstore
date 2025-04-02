@@ -1,0 +1,444 @@
+/* ========================================
+   Global Reset & Base Styles
+======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: #f8f8f8;
+    color: #555;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  
+  /* ========================================
+     Variables and Common Classes
+  ======================================== */
+  :root {
+    --primary-color: #35424a;
+    --secondary-color: #6c7b8b;
+    --accent-color: #ffcc00;
+    --light-bg: #f8f8f8;
+    --white: #ffffff;
+  }
+  
+  /* Container for consistent width */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  /* ========================================
+     Header & Navigation Styling
+  ======================================== */
+  header {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 10;
+  }
+  
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    text-align: center;
+    animation: fadeIn 1s ease-in;
+  }
+  
+  nav {
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: var(--accent-color);
+  }
+  
+  /* ========================================
+     Featured Books (Horizontal Scroll)
+  ======================================== */
+  /* -----------------------------------------------------
+   Enhanced Featured Books Slider
+----------------------------------------------------- */
+#featured-books {
+    position: relative;
+    overflow: hidden;
+    background: #e2e2e2;
+    padding: 30px 0;
+  }
+  
+  /* The slider container holds all slider items in a row.
+     For a seamless loop, duplicate your items in your HTML. */
+  .slider {
+    display: flex;
+    /* Adjust the width based on the total number of duplicated items;
+       here we assume 10 items total (5 unique items repeated) */
+    width: calc(210px * 10); 
+    animation: slideFeatured 30s linear infinite;
+  }
+  
+  .slider:hover {
+    /* Pause the sliding animation on hover for better legibility */
+    animation-play-state: paused;
+  }
+  
+  /* Each slider item styling */
+  .slider-item {
+    flex: 0 0 auto;
+    width: 200px;
+    margin: 0 5px; /* small gap between items */
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.5, 1), box-shadow 0.3s ease;
+  }
+  
+  .slider-item:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  }
+  
+  /* Optional: Fading edges for a more polished look */
+  #featured-books::before,
+  #featured-books::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  #featured-books::before {
+    left: 0;
+    background: linear-gradient(to right, #e2e2e2, transparent);
+  }
+  
+  #featured-books::after {
+    right: 0;
+    background: linear-gradient(to left, #e2e2e2, transparent);
+  }
+  
+  /* Keyframes to continuously slide the content.
+     The slider container (duplicated items) moves from 0 to -50% so that
+     the duplicate seamless part replaces the original at the end. */
+  @keyframes slideFeatured {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  
+  /* ========================================
+     About Section
+  ======================================== */
+  #about {
+    background: var(--white);
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  #about h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+    font-size: 36px;
+    margin-bottom: 20px;
+    animation: slideIn 1s ease-out;
+  }
+  
+  #about p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: auto;
+    animation: fadeIn 1.5s ease-in;
+  }
+  
+  /* ========================================
+     Books Section & Book Cards
+  ======================================== */
+  #books {
+    background: var(--light-bg);
+    padding: 50px 20px;
+  }
+  
+  #books h2 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 36px;
+    margin-bottom: 40px;
+    animation: slideIn 1s ease-out;
+  }
+  
+  /* Grid container for book cards */
+  .book-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  /* Individual Book Cards */
+  .book-card {
+    background: var(--white);
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.8s ease-in forwards;
+  }
+  
+  .book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  }
+  
+  .book-card img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    transition: transform 0.3s;
+  }
+  
+  .book-card img:hover {
+    transform: scale(1.03);
+  }
+  
+  .book-card h3 {
+    margin: 15px 0 10px;
+    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .book-card p {
+    font-size: 16px;
+    color: #777;
+  }
+  
+  .book-card button {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 10px;
+  }
+  
+  .book-card button:hover {
+    background: #2d3a45;
+    transform: scale(1.05);
+  }
+  
+  /* ========================================
+     Testimonials Section
+  ======================================== */
+  #testimonials {
+    background: var(--white);
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  #testimonials h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+    font-size: 36px;
+    margin-bottom: 30px;
+    animation: slideIn 1s ease-out;
+  }
+  
+  /* Each testimonial block */
+  .testimonial {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+  }
+  
+  .testimonial p {
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+  
+  .testimonial cite {
+    font-weight: bold;
+    color: var(--primary-color);
+    display: block;
+  }
+  
+  /* ========================================
+     Contact Section
+  ======================================== */
+  #contact {
+    background: var(--light-bg);
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  #contact h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+    font-size: 36px;
+    margin-bottom: 20px;
+    animation: slideIn 1s ease-out;
+  }
+  
+  #contact p {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  #contact a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  #contact a:hover {
+    color: var(--accent-color);
+  }
+  
+  /* ========================================
+     Footer
+  ======================================== */
+  footer {
+    background: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  footer p {
+    font-size: 16px;
+  }
+  
+  /* ========================================
+     Animations
+  ======================================== */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* ========================================
+     Responsive Styles
+  ======================================== */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+    }
+    nav ul li {
+      margin: 10px 0;
+    }
+    #featured-books div {
+      width: 150px;
+    }
+    .book-card {
+      width: 90%;
+      margin: 10px auto;
+    }
+  }
+  /* Universal Button Styling */
+button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  /* Add to Cart Button */
+  .btn-add {
+    background: #35424a;
+    color: white;
+    font-size: 16px;
+  }
+  
+  .btn-add:hover {
+    background: #2c3a45;
+    transform: scale(1.05);
+  }
+  
+  /* View Cart Button */
+  .btn-cart {
+    background: #ffcc00;
+    color: black;
+    font-weight: bold;
+  }
+  
+  .btn-cart:hover {
+    background: #e6b800;
+    transform: scale(1.05);
+  }
+  
+  /* Clear Cart Button */
+  .btn-clear {
+    background: #ff4444;
+    color: white;
+  }
+  
+  .btn-clear:hover {
+    background: #cc0000;
+    transform: scale(1.05);
+  }
+ 

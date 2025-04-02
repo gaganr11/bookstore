@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elegant Books - E-Commerce Bookstore</title>
+  <!-- Google Fonts: Montserrat for general text, Playfair Display for headings -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+</head>
+<body style="margin:0; padding:0; font-family: 'Montserrat', sans-serif; background-color:#f8f8f8;">
+
+  <!-- Header Section -->
+  <header style="background: linear-gradient(45deg, #35424a, #6c7b8b); color:#ffffff; padding:20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+    <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+      <h1 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 42px;">Elegant Books</h1>
+      <nav style="margin-top: 15px;">
+        <ul style="list-style: none; display: inline-flex; padding: 0; margin: 0;">
+          <li style="margin: 0 15px;">
+            <a href="#about" style="text-decoration: none; color: #ffffff; font-size: 18px;">About</a>
+          </li>
+          <li style="margin: 0 15px;">
+            <a href="#books" style="text-decoration: none; color: #ffffff; font-size: 18px;">Books</a>
+          </li>
+          <li style="margin: 0 15px;">
+            <a href="#testimonials" style="text-decoration: none; color: #ffffff; font-size: 18px;">Testimonials</a>
+          </li>
+          <li style="margin: 0 15px;">
+            <a href="#contact" style="text-decoration: none; color: #ffffff; font-size: 18px;">Contact</a>
+          </li>
+          
+          <div id="search-results"></div>
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+
+  <!-- Featured Books Horizontal Section (Gap Between Header & About) -->
+  <section id="featured-books">
+    <div class="slider">
+      <!-- Original Slider Items -->
+      <div class="slider-item">
+        <img src="https://via.placeholder.com/200x300?text=Featured+1" alt="Featured Book 1" style="width:100%; border-radius:5px 5px 0 0;">
+      </div>
+      <div class="slider-item">
+        <img src="https://via.placeholder.com/200x300?text=Featured+2" alt="Featured Book 2" style="width:100%; border-radius:5px 5px 0 0;">
+      </div>
+      <div class="slider-item">
+        <img src="https://via.placeholder.com/200x300?text=Featured+3" alt="Featured Book 3" style="width:100%; border-radius:5px 5px 0 0;">
+      </div>
+      <div class="slider-item">
+        <img src="https://via.placeholder.com/200x300?text=Featured+4" alt="Featured Book 4" style="width:100%; border-radius:5px 5px 0 0;">
+      </div>
+      <div class="slider-item">
+        <img src="https://via.placeholder.com/200x300?text=Featured+5" alt="Featured Book 5" style="width:100%; border-radius:5px 5px 0 0;">
+      </div>
+      <!-- Duplicate the same items for the seamless effect -->
+      <div class="slider-item">
+        <img src="https://via.placeholder.com/200x300?text=Featured+1" alt="Featured Book 1" style="width:100%; border-radius:5px 5px 0 0;">
+      </div>
+      <div class="slider-item">
+        <img src="https://via.placeholder.com/200x300?text=Featured+2" alt="Featured Book 2" style="width:100%; border-radius:5px 5px 0 0;">
+      </div>
+      <div class="slider-item">
+        <img src="https://via.placeholder.com/200x300?text=Featured+3" alt="Featured Book 3" style="width:100%; border-radius:5px 5px 0 0;">
+      </div>
+      <div class="slider-item">
+        <img src="https://via.placeholder.com/200x300?text=Featured+4" alt="Featured Book 4" style="width:100%; border-radius:5px 5px 0 0;">
+      </div>
+      <div class="slider-item">
+        <img src="https://via.placeholder.com/200x300?text=Featured+5" alt="Featured Book 5" style="width:100%; border-radius:5px 5px 0 0;">
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- About Section -->
+  <section id="about" style="padding: 50px 20px; background-color:#ffffff;">
+    <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+      <h2 style="font-family: 'Playfair Display', serif; color:#35424a; font-size: 36px; margin-bottom: 20px;">About Us</h2>
+      <p style="font-size: 18px; color:#555555; line-height: 1.8;">
+        Welcome to Elegant Books, your ultimate destination for a premium selection of literature. Our collection features timeless classics, modern bestsellers, and niche publications—all curated to inspire and educate. At Elegant Books, we believe each story is a doorway to new adventures, and we are passionate about connecting readers with the perfect book.
+      </p>
+    </div>
+  </section>
+
+  <!-- Books Section with Add-to-Cart Buttons -->
+  <section id="books" style="padding: 50px 20px; background-color:#f8f8f8;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <h2 style="font-family: 'Playfair Display', serif; text-align: center; color:#35424a; font-size: 36px; margin-bottom: 40px;">Our Books Collection</h2>
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+        <!-- Book Card 1 -->
+        <div style="background-color:#ffffff; width:300px; margin:20px; padding:20px; border-radius:10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+          <img src="https://via.placeholder.com/300x400?text=Book+1" alt="Book 1" style="width:100%; border-radius:10px 10px 0 0;">
+          <h3 style="color:#35424a; font-family:'Playfair Display', serif; margin:15px 0 10px 0;">Enchanted Tales</h3>
+          <p style="color:#777777; font-size:16px;">Author: Alice Walker</p>
+          <p style="color:#777777; font-size:16px; font-weight:bold;">Price: $29</p>
+          <button onclick="addToCart('The Great Adventure', 20)">Add to Cart</button>
+        </div>
+        <!-- Book Card 2 -->
+        <div style="background-color:#ffffff; width:300px; margin:20px; padding:20px; border-radius:10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+          <img src="https://via.placeholder.com/300x400?text=Book+2" alt="Book 2" style="width:100%; border-radius:10px 10px 0 0;">
+          <h3 style="color:#35424a; font-family:'Playfair Display', serif; margin:15px 0 10px 0;">Mystery of Dawn</h3>
+          <p style="color:#777777; font-size:16px;">Author: Bob Marley</p>
+          <p style="color:#777777; font-size:16px; font-weight:bold;">Price: $35</p>
+          <button onclick="addToCart('Mystery of the Night', 25)">Add to Cart</button>
+        </div>
+        <!-- Book Card 3 -->
+        <div style="background-color:#ffffff; width:300px; margin:20px; padding:20px; border-radius:10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+          <img src="https://via.placeholder.com/300x400?text=Book+3" alt="Book 3" style="width:100%; border-radius:10px 10px 0 0;">
+          <h3 style="color:#35424a; font-family:'Playfair Display', serif; margin:15px 0 10px 0;">Journey to Infinity</h3>
+          <p style="color:#777777; font-size:16px;">Author: Carl Sagan</p>
+          <p style="color:#777777; font-size:16px; font-weight:bold;">Price: $40</p>
+          <button onclick="addToCart('Journey Through Time', 30)">Add to Cart</button>
+        </div>
+        <!-- Additional Book Cards can be added similarly -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart Control Buttons (Somewhere on the Page) -->
+<div style="text-align: center; padding: 20px;">
+    <button class="btn-cart" onclick="viewCart()">View Cart (<span id="cart-count">0</span>)</button>
+    <button class="btn-clear" onclick="clearCart()">Clear Cart</button>
+    <button onclick="window.location.href='checkout.html'" class="btn-cart">Proceed to Checkout</button>
+</div>
+
+
+
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" style="padding: 50px 20px; background-color:#ffffff;">
+    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+      <h2 style="font-family: 'Playfair Display', serif; color:#35424a; font-size: 36px; margin-bottom: 30px;">Testimonials</h2>
+      <div style="font-size:18px; color:#555555; line-height:1.8; margin-bottom:40px;">
+        <p style="font-style: italic;">"Elegant Books offers more than just a collection—it’s an experience that transcends simply reading. Every book feels like a doorway to another world."</p>
+        <p style="font-weight:bold; color:#35424a;">- Samantha Lee</p>
+      </div>
+      <div style="font-size:18px; color:#555555; line-height:1.8;">
+        <p style="font-style: italic;">"From the chic design to the curated selection, this bookstore inspires me to discover something new with every visit."</p>
+        <p style="font-weight:bold; color:#35424a;">- David Kumar</p>
+      </div>
+    </div>
+  </section>
+   
+
+
+  <!-- Contact Section -->
+  <section id="contact" style="padding: 50px 20px; background-color:#f8f8f8;">
+    <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+      <h2 style="font-family: 'Playfair Display', serif; color:#35424a; font-size: 36px; margin-bottom: 20px;">Contact Us</h2>
+      <p style="font-size: 18px; color:#555555; line-height:1.8;">
+        For inquiries, feedback, or support, feel free to reach out. We’re here to help and love connecting with book enthusiasts.
+      </p>
+      <p style="font-size: 18px; color:#35424a;">
+        Email: <a href="mailto:support@elegantbooks.com" style="color:#35424a; text-decoration: none;">support@elegantbooks.com</a>
+      </p>
+      <p style="font-size: 18px; color:#35424a;">
+        Phone: <a href="tel:+1234567890" style="color:#35424a; text-decoration: none;">+1234567890</a>
+      </p>
+      <p style="font-size: 18px; color:#35424a;">
+        Address: 456 Literary Lane, Novel City, 78910
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background-color:#35424a; color:#ffffff; text-align:center; padding:20px 0;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <p style="margin:0; font-size:16px;">&copy; 2025 Elegant Books. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+

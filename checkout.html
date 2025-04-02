@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Checkout - Paytm Payment</title>
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+
+    <!-- Checkout Page Container -->
+    <div class="checkout-container">
+        <h1>Checkout</h1>
+
+        <div id="cart-items"></div> <!-- List of books added to cart -->
+        <h2>Total: <span id="total-price">₹0</span></h2>
+
+        <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfKqkxf9UhFgDD3twOUE8wk-lLwOfuYSrZexHxa6d88kP5mkw/viewform?usp=header', '_blank')">
+            Fill Delivery Details
+        </button>
+        
+        
+        <!-- Paytm Payment Button (Initially Disabled) -->
+        <form method="POST" action="https://securegw.paytm.in/theia/processTransaction">
+            <input type="hidden" name="MID" value="YOUR_MERCHANT_ID">
+            <input type="hidden" name="ORDER_ID" value="ORDER123">
+            <input type="hidden" name="CUST_ID" value="CUSTOMER123">
+            <input type="hidden" name="TXN_AMOUNT" value="100">
+            <input type="hidden" name="CHANNEL_ID" value="WEB">
+            <input type="hidden" name="INDUSTRY_TYPE_ID" value="Retail">
+            <input type="hidden" name="CALLBACK_URL" value="success.html"> <!-- Redirect after payment -->
+        
+            <button class="paytm-btn" type="submit" id="paytm-btn" disabled>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Paytm_logo.svg/120px-Paytm_logo.svg.png" alt="Paytm Logo">
+                Pay with Paytm
+            </button>
+        </form>
+        
+        
+
+        <p id="payment-status"></p>
+    </div>
+
+    <script src="checkout.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+/* General Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f8f8f8;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Checkout Page Box */
+.checkout-container {
+    max-width: 400px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: auto;
+}
+
+h1, h2 {
+    color: #35424a;
+}
+
+#cart-items {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+/* Paytm Button Styling */
+.paytm-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(45deg, #004BA8, #009EE4); /* Paytm Blue Gradient */
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.paytm-btn img {
+    width: 25px;
+    height: auto;
+}
+
+.paytm-btn:hover {
+    background: linear-gradient(45deg, #003b8b, #007EC6);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+/* Order Form Styling */
+#buyer-details {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+#buyer-details h2 {
+    text-align: center;
+    color: #35424a;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    height: 60px;
+}
+
+button {
+    width: 100%;
+    background: #35424a;
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #2c3a45;
+}
+#paytm-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
